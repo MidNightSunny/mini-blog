@@ -25,35 +25,20 @@
     <% if user_signed_in? %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a class="#" href="/posts/new">New</a></li>
-      <li><%= Sign Out "ログアウト", destroy_user_session_path, method: :delete %><li>
+      <li><%= link_to "Sign Out ", destroy_user_session_path, method: :delete %><li>
     </ul>
   </div>
 
     <% else %>
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to "Sign In", new_user_session_path, :class => '#' %><li>
-      <li><%= link_to "Sign Up", new_user_registration_path, :class => '#' %><li>
+      <li><%= link_to "Sign In", new_user_session_path, class: 'post' %><li>
+      <li><%= link_to "Sign Up", new_user_registration_path, class: 'post' %><li>
  <% end %>
 
 </nav>
 
-<div class="row">
-    <div class="col s12 m6">
-      <div class="card #fffde7 yellow lighten-5">
-        <div class="card-content black-text">
-          <p>userコメント</p>
-        </div>
-
-        <% if user_signed_in? %>
-        <div class="card-action">
-          <a href="#">EDIT</a>
-          <a href="#">DELETE</a>
-        </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<%= yield %>
 
 </body>
 </html>
