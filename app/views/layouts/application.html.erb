@@ -44,10 +44,13 @@
         <div class="card-content black-text">
           <p>userコメント</p>
         </div>
+
+        <% if user_signed_in? %>
         <div class="card-action">
           <a href="#">EDIT</a>
           <a href="#">DELETE</a>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
