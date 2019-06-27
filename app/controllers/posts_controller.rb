@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   def create
     Post.create(post_params)
     redirect_to 'http://localhost:3000/'
-    binding.pry
   end
 
   def destroy
