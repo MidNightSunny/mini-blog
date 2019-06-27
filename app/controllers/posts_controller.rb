@@ -25,6 +25,16 @@ class PostsController < ApplicationController
        redirect_to("http://localhost:3000/")
     end
   end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(content: params[:content])
+    redirect_to("http://localhost:3000/")
+  end
   
   private
    def post_params
