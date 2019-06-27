@@ -2,7 +2,10 @@
 <html>
 <head>
   <title>mini-blog</title>
-  <style type="text/css" href="./application.css"></style>
+  <style type="text/css" href="application.css"></style>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
 
   <!-- Compiled and minified CSS -->
@@ -20,7 +23,7 @@
 
 <nav class="#4db6ac teal lighten-2">
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo">mini app</a>
+    <a href="http://localhost:3000/" class="brand-logo center" >mini app</a>
 
     <% if user_signed_in? %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -30,10 +33,10 @@
   </div>
 
     <% else %>
-    <div class="nav-wrapper">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to "Sign In", new_user_session_path, class: 'post' %><li>
-      <li><%= link_to "Sign Up", new_user_registration_path, class: 'post' %><li>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><%= link_to "Sign In", new_user_session_path%><li>
+      <li><%= link_to "Sign Up", new_user_registration_path%><li>
+    </div>
  <% end %>
 
 </nav>
