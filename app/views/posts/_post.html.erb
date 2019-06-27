@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card #fffde7 yellow lighten-5">
+        <div class="card-content black-text">
+          <p><%= post.content %></p>
+        </div>
+
+        <% if user_signed_in?  && current_user.id == post.user_id %>
+        <div class="card-action">
+          <%= link_to 'EDIT', "/posts/#{post.id}/edit", method: :get %>
+          <%= link_to 'DELETE', "/posts/#{post.id}", method: :delete %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
